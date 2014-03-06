@@ -1,4 +1,7 @@
 TMPDIR="/dev/shm/${USER}/tmp"
+if [ ! -d "${TMPDIR}" ]; then
+    mkdir -p "${TMPDIR}"
+fi
 export TMPDIR
 
 # place caches on tmpfs
