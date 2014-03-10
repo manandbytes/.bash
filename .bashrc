@@ -15,5 +15,8 @@ fi
 PS1="\e[2m[\D{%F %Z} \A] \u@\h \w\e[0m\n> "
 PROMPT_COMMAND='RET=$?; echo; if [ $RET != 0 ] ; then echo -e "exit status: \e[1;31m$RET\e[0m"; fi;'
 
+export EDITOR="emacsclient"
+export ALTERNATE_EDITOR=""
+
 # grep: use colors, deprecated but works
 export GREP_OPTIONS="--color=auto"
