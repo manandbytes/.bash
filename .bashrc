@@ -21,5 +21,7 @@ export XDG_CONFIG_HOME
 export EDITOR="emacsclient"
 export ALTERNATE_EDITOR=""
 
-# grep: use colors, deprecated but works
-export GREP_OPTIONS="--color=auto"
+# grep: use colors
+GREP_OPTIONS="--color=auto"
+alias grep="grep $GREP_OPTIONS"
+unset GREP_OPTIONS
