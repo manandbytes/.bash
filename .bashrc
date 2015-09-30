@@ -3,9 +3,12 @@
 
 # http://www.oreillynet.com/onlamp/blog/2007/01/whats_in_your_bash_history.html
 # allow duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL=
+HISTCONTROL=
 HISTFILESIZE=1000000000
 HISTSIZE=1000000
+
+# append to the history file, don't overwrite it
+shopt -s histappend
 
 # Put all alias definitions into a separate file
 if [ -f ~/.bash_aliases ]; then
