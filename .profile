@@ -13,6 +13,6 @@ fi
 export TMPDIR
 
 # place caches on tmpfs
-export XDG_CACHE_HOME="/dev/shm/${USER}/.cache"
+export XDG_CACHE_HOME="${TMP}/.cache"
 
 _byobu_sourced=1 . /usr/bin/byobu-launch
