@@ -15,7 +15,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-PS1='\[\e[2m\]╒═ \D{%F %T %Z}, \D{%a #%V} | \u@\h \[\e[0;1;32m\]\w\[\e[0m\]\n\[\e[2m\]╘> \[\e[0m\]'
+PS1='\[\e[2m\]╒═ \D{%F %T %Z}, \D{%a #%V} | \u@\h \[\e[0;1;32m\]\w\[\e[0m\]\n\[\e[2m\]$ \[\e[0m\]'
 PROMPT_COMMAND='RET=$?; echo; if [ $RET != 0 ] ; then echo -e "exit status: \e[1;31m$RET\e[0m"; fi;'
 
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=$HOME/.config}"
