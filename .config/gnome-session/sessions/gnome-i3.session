@@ -1,0 +1,4 @@
+[GNOME Session]
+Name=GNOME with i3
+# RequiredComponents=i3;org.gnome.SettingsDaemon.XSettings;
+RequiredComponents=gnome-settings-daemon;gnome-panel;i3;
