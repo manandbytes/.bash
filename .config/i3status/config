@@ -39,8 +39,10 @@ ethernet _first_ {
 
 battery all {
         status_full = ""
+        status_chr = ""
         status_bat = ""
         format = "%status %remaining %percentage %emptytime"
+        format_down = ""
         integer_battery_capacity = true
         # show remaining time as HH:MM only, w/o seconds
         hide_seconds = true
