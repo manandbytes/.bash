@@ -1,0 +1,3 @@
+rofi.theme: solarized_alternate
+rofi.font: Hack 16
+rofi.matching: regex
