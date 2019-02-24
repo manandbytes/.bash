@@ -6,3 +6,7 @@ rofi.matching: regex
 rofi.lines: 16
 rofi.show-icons: true
 rofi.sidebar-mode: true
+
+### experimenting
+# rofi.fullscreen: true
+# rofi.columns: 3
