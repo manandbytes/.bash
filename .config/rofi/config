@@ -1,3 +1,7 @@
 rofi.theme: solarized_alternate
 rofi.font: Hack 16
 rofi.matching: regex
+
+### what to show
+rofi.lines: 16
+rofi.show-icons: true
