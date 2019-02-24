@@ -5,3 +5,4 @@ rofi.matching: regex
 ### what to show
 rofi.lines: 16
 rofi.show-icons: true
+rofi.sidebar-mode: true
