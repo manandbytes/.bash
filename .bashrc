@@ -1,6 +1,21 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=$HOME/.config}"
+export XDG_CONFIG_HOME
+
+# https://waxzce.medium.com/use-bashrc-d-directory-instead-of-bloated-bashrc-50204d5389ff
+# mkdir -p "${XDG_CONFIG_HOME}"/bash/bashrc.d
+# chmod 700 "${XDG_CONFIG_HOME}"/bash/bashrc.d
+if [ -d "${XDG_CONFIG_HOME}"/bash/bashrc.d ]; then
+    for file in "${XDG_CONFIG_HOME}"/bash/bashrc.d/*.bashrc
+    do
+        if [ -r "$file" ]; then
+            source "$file"
+        fi
+    done
+fi
+
 # http://www.oreillynet.com/onlamp/blog/2007/01/whats_in_your_bash_history.html
 # allow duplicate lines in the history. See bash(1) for more options
 HISTCONTROL=
@@ -17,9 +32,6 @@ fi
 
 PS1='\[\e[2m\]╒═ \D{%F %T %Z}, \D{%a #%V} | \u@\h \[\e[0;1;32m\]\w\[\e[0m\]\n\[\e[2m\]$ \[\e[0m\]'
 PROMPT_COMMAND='RET=$?; echo; if [ $RET != 0 ] ; then echo -e "exit status: \e[1;31m$RET\e[0m"; fi;'
-
-XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=$HOME/.config}"
-export XDG_CONFIG_HOME
 
 # Guix, package manager
 # https://wiki.archlinux.org/title/Guix
