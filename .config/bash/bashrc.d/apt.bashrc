@@ -2,11 +2,15 @@
 command -v apt &> /dev/null || return ;
 
 function apt-list-installed() {
-    command apt list --installed 2>/dev/null | grep --extended-regexp "\b${1:-unstable}\b" ;
+    command apt list "?installed ?archive(${1:-unstable})" 2>/dev/null
+}
+
+function apt-list-installed-manually() {
+    command apt list '?installed !?automatic' 2>/dev/null
 }
 
 function apt-list-upgradable() {
-    command apt list --upgradable --target-release "${1:-unstable}" 2>/dev/null ;
+    command apt list '?upgradable' --target-release "${1:-unstable}" 2>/dev/null ;
 }
 
 function apt-list-kernels() {
