@@ -6,3 +6,6 @@ if ! shopt -oq posix; then
     source /etc/bash_completion
   fi
 fi
+
+# perform file completion in a case insensitive fashion
+bind "set completion-ignore-case on"
