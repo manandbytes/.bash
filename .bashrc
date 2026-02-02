@@ -1,5 +1,5 @@
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+# if not running interactively, don't do anything
+[ "${-#*i}" != "$-" ] || return
 
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=$HOME/.config}"
 export XDG_CONFIG_HOME
@@ -11,10 +11,16 @@ export XDG_STATE_HOME
 # mkdir -p "${XDG_CONFIG_HOME}"/bash/bashrc.d
 # chmod 700 "${XDG_CONFIG_HOME}"/bash/bashrc.d
 if [ -d "${XDG_CONFIG_HOME}"/bash/bashrc.d ]; then
-    for file in "${XDG_CONFIG_HOME}"/bash/bashrc.d/*.bashrc
-    do
+    for file in "${XDG_CONFIG_HOME}"/bash/bashrc.d/*.bashrc; do
         if [ -r "$file" ]; then
-            source "$file"
+            [ -r "$file" ] && source "$file"
         fi
+    done
+fi
+
+# local bash completions
+if [ -d "${XDG_CONFIG_HOME}"/bash/bash_completion.d ]; then
+    for file in "${XDG_CONFIG_HOME}"/bash/bash_completion.d/*.bash; do
+        [ -r "$file" ] && source "$file"
     done
 fi
